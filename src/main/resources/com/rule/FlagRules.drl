@@ -1,0 +1,22 @@
+package com.rule
+
+import com.javainuse.model.Product
+
+rule "set status green"
+	when
+		flagObject: Flag(progress==100)
+	then
+		flagObject.setStatus("green");
+	end
+rule "set status yellow"
+	when
+		flagObject: Flag(progress==50)
+	then
+		flagObject.setStatus("yellow");
+	end
+rule "set status red"
+    when
+        flagObject: Flag(progress==0)
+    then
+        flagObject.setStatus("red");
+    end
